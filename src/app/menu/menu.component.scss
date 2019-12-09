@@ -1,0 +1,111 @@
+@import '../../scss-import/variaveis';
+
+/*
+BOTAO ADICIONAR
+*/
+.btAdd {
+    display: inline-block;
+    height: 50px;
+    background: $acao1;
+    padding: 12px 25px 12px 17px;
+    @extend .font14;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    line-height: 26px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    svg {
+        fill: #fff;
+        width: 25px;
+        height: 25px;
+        vertical-align: top;
+        margin-right: 12px;
+    }
+    &:hover {
+        background: $acao2;
+    }
+}
+
+
+
+
+
+/*
+MENU LATERAL
+*/
+
+.menuLateral {
+    width: 100%;
+    &, & * { @extend .reset;}
+    li {
+        display: block;
+        padding: 2px 0;
+    }
+    a, .subs {
+        display: block;
+        @extend .font14;
+        color: $cnormal;
+        font-weight: bold;
+        line-height: 24px;
+        padding: 8px 0 8px 37px;
+        margin-left: -20px;
+        text-transform: uppercase;
+        border-radius: 0 20px 20px 0;
+        position: relative;
+        width: calc(100% + 20px);
+        border: none;
+        background: #fff;
+        text-align: left;
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: $cnormal;
+            vertical-align: top;
+            margin-right: 7px;
+        }
+        &:hover, &.active {
+            background: $acao3;
+            color: $acao1;
+            svg { fill: $acao1;}
+        }
+        &.active:hover { background: $acao3; }
+    }
+    .subs {
+        &::before {
+            content: '';
+            display: inline-block;
+            height: 8px;
+            width: 4px;
+            background: $cnormal;
+            vertical-align: middle;
+            -webkit-transition: 0.2s all ease-in-out;
+            transition: 0.2s all ease-in-out;
+            -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+            margin: 0 11px 4px -15px;
+            transform-origin: 50% 50%;
+            transition: .2s;
+        }
+        &.open::before {
+            transform: rotate(90deg);
+        }
+        &:hover::before { background: $acao1;}
+    }
+    ul {
+        width: 100%;
+        li a, .subs {
+            padding-left: 60px;
+            margin-left: 0;
+            width: 100%;
+        }
+        ul li a { padding-left: 80px;}
+    }
+    .panel-open {
+        .subs::before { transform: rotate(90deg);}
+        ul li {
+            .subs::before { transform: rotate(0deg);}
+            .panel-open .subs::before { transform: rotate(90deg);}
+        }
+    }
+}

@@ -1,0 +1,201 @@
+@import '../../scss-import/variaveis';
+@import '../menu/menu.component';
+
+
+
+
+
+
+/*
+FORM PADDINGS
+*/
+form.container_12 {
+    box-sizing: border-box;
+    &.formTopo { padding-top: 106px;}
+    &.comLateralForm { padding-right: 25% !important;}
+}
+
+
+
+
+
+
+/*
+CK EDITOR
+*/
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 150px;
+}
+
+
+
+
+
+
+/*
+FORM
+*/
+fieldset.input, fieldset.textoNoticia {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    &.menor { width: 48%;}
+    input {
+        width: 100%;
+        border: 1px solid $cbord;
+        border-radius: 6px;
+        display: block;
+        box-sizing: border-box;
+        height: 60px;
+        padding: 20px;
+        color: $cdark;
+        @extend .font16;
+        &:focus {
+            border: 2px solid $acao1;
+            ~ label {
+                color: $acao1;
+                top: 0;
+                background: rgba(255, 255, 255, 1);
+                @extend .font13;
+            }
+        }
+        &.ng-valid {
+            ~ label {
+                top: 0;
+                background: rgba(255, 255, 255, 1);
+                @extend .font13;
+            }
+        }
+        &.ng-dirty {
+            ~ label,
+            &:focus.ng-invalid.ng-touched ~ label {
+                top: 0;
+                background: rgba(255, 255, 255, 1);
+                @extend .font13;
+            }
+            &.ng-invalid.ng-touched ~ label {
+                top: 50%;
+                @extend .font16;
+                background: rgba(255, 255, 255, 0);
+                &.erro {@extend .font13;}
+            }
+
+        }
+    }
+    label {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        @extend .font16;
+        transform: translateY(-50%);
+        transition: 0.1s all ease-in-out;
+        padding: 0 10px;
+        background: rgba(255, 255, 255, 0);
+    }
+    &.erro, &.limite {
+        input {
+            border: 2px solid $erro;
+            &:focus ~ label { color: $erro;}
+        }
+        label.erro {
+            top: auto !important;
+            transform: translateY(50%);
+            @extend .font13;
+            bottom: 0;
+            background: rgba(255, 255, 255, 1) !important;
+            color: $erro;
+        }
+    }
+    &.limite, &.erro.limite {
+        input.ng-invalid.ng-touched ~ label {
+            top: 0;
+            background: rgba(255, 255, 255, 1);
+            @extend .font13;
+        }
+    }
+}
+fieldset.textoNoticia {
+    border-radius: 4px;
+    &.erro.retorno {
+        border: 2px solid $erro;
+        margin: -2px -2px 18px -2px;
+    }
+}
+.escolheChamada {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    @extend .font14;
+    color: $cdark;
+    border-radius: 6px;
+    border: 1px solid $cbord;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 20px;
+    line-height: 20px;
+    
+    button.btEscolher {
+        height: 42px;
+        padding: 0 15px 0 20px;
+        margin: -11px -16px -11px 0;
+        vertical-align: top;
+        @extend .font14;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $acao1;
+        background: none;
+        border: none;
+        border-radius: 60px;
+        svg {
+            width: 18px;
+            height: 18px;
+            margin: 0 0 2px 10px;
+            fill: $acao1;
+        }
+        &:hover {
+            background: $cbg;
+            color: $acao2;
+            svg { fill: $acao2;}
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+/*
+LATERAL FORM
+*/
+.lateralForm {
+    position: fixed;
+    top: 106px;
+    bottom: 0;
+    right: 0;
+    width:25%;
+    aside {
+        background: $cbg;
+        border-left: 1px solid $cbord;
+        width: calc(100% + 10px);
+        box-sizing: border-box;
+        height: 100%;
+    }
+
+    .menuLateral {
+        .subs {
+            width: 100%;
+            margin: 0;
+            padding: 20px 0 20px 37px;
+            background: $cbg;
+            border-radius: 0;
+        }
+        .conteudoAcordion {
+            padding: 0 20px 20px 20px;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@import '../../../scss-import/variaveis';
+
+
+
+
+/*
+CARDS
+*/
+.cards {
+    @extend .reset;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid $cbord;
+    padding: 20px 116px 20px 20px;
+    position: relative;
+
+    h6 {
+        @extend .font16;
+        color: $cnormal;
+        font-weight: normal;
+        display: block;
+    }
+    strong {
+        display: block;
+        @extend .font36;
+        color: $cdark;
+    }
+    svg {
+        width: 72px;
+        height: 72px;
+        fill: $acao1;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+}

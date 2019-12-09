@@ -1,0 +1,49 @@
+.reset {font-size: 0;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;display: inline-block;z-index: 1;vertical-align: top;}
+.antreset {font-size: 12px;box-sizing: content-box;-moz-box-sizing: content-box;-webkit-box-sizing: content-box;}
+
+$cbg: #f5f5f5;
+$cbord: #dadbe0;
+$clight: #8c9094;
+$cnormal: #5f6368;
+$cdark: #202124;
+$erro: #9a2222;
+
+$acao1: #2b00c9;              $acao2: #2a046b;
+$acao3: #f3f6fe;              $acao4: #ecf0fc;
+$acao1RGBA: rgba(43, 0, 201, 0.3);
+
+$telapequena: 750px;
+$telamedia: 940px;
+$telaregular: 1050px;
+$telagrande: 1280px;
+@mixin respond-to($media) {
+	@if $media == pequeno {
+		@media only screen and (max-width: $telapequena) { @content; }
+	}
+	@else if $media == medio {
+		@media only screen and (max-width: $telamedia) { @content; }
+	}
+	@else if $media == regular {
+		@media only screen and (max-width: $telaregular) { @content; }
+	}
+	@else if $media == grande {
+		@media only screen and (max-width: $telagrande) { @content; }
+	}
+}
+/*
+@include respond-to(pequeno) { conteudo aqui }
+@include respond-to(medio) { conteudo aqui }
+@include respond-to(regular) { conteudo aqui }
+@include respond-to(grande) { conteudo aqui }
+*/
+
+.font12 {font-size: 12px;}
+.font13 {font-size: 13px;}
+.font14 {font-size: 14px;}
+.font16 {font-size: 16px;}
+.font18 {font-size: 18px;}
+.font20 {font-size: 20px;}
+.font24 {font-size: 24px;}
+.font28 {font-size: 28px;}
+.font36 {font-size: 36px;}
+.font60 {font-size: 60px;}

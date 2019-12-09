@@ -1,0 +1,9 @@
+<div *ngIf="form" style="padding: 40px; box-sizing: border-box; margin-top: 60px;">
+
+    <h6>Detalhes do form</h6>
+
+    <pre style="padding: 40px; box-sizing: border-box; margin-bottom: 20px; background: #f0f0f0;">Form Valido {{ form.valid }}</pre>
+    <pre style="padding: 40px; box-sizing: border-box; margin-bottom: 20px; background: #f0f0f0;">Form Submetido {{ form.submitted }}</pre>
+    <pre style="padding: 40px; box-sizing: border-box; margin-bottom: 20px; background: #f0f0f0;">Valores <br> {{ form.value | json }}</pre>
+
+</div>

@@ -1,0 +1,163 @@
+@import 'variaveis';
+
+
+
+.paginacao {
+    vertical-align: middle;
+    @extend .font12;
+    text-align: right;
+    select {
+        margin: 0 7px;
+        border: none;
+        background: $cbg;
+        @extend .font12;
+        height: 25px;
+        box-sizing: border-box;
+        color: $cnormal;
+    }
+    .pagAnt, .pagProx {
+        width: 36px;
+        height: 36px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 16px 4px;
+        border-radius: 100%;
+        transition: 0.3s;
+        svg {
+            fill: $cnormal;
+        }
+        &:hover {
+            background: $cbg;
+            box-shadow: 0 0 0 10px $cbg;
+            svg { fill: $acao1;}
+        }
+        &.nulo {
+            cursor: default;
+            opacity: 0.5;
+            &:hover {
+                background: none;
+                box-shadow: none;
+                svg { fill: $cnormal;}
+            }
+        }
+    }
+    .pagProx { margin-right: 0px;}
+}
+
+.conteudoBorda {
+    border: 1px solid $cbord;
+    border-radius: 6px;
+
+    .listagem {
+        tr {
+            th {
+                @extend .font12;
+                color: $clight;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: left;
+                padding: 20px 5px 10px;
+                &:first-child { padding-left: 20px;}
+                &:last-child { padding-right: 20px;}
+                &.titulo { padding: 0 15px;}
+            }
+            td {
+                vertical-align: middle;
+                padding: 10px 5px;
+                &:first-child { padding-left: 20px;}
+                &:last-child { padding-right: 20px;}
+                &.titulo { padding: 10px 15px;}
+                a.abrirAba {
+                    width: 18px;
+                    display: block;
+                    height: 18px;
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        fill: $cnormal;
+                    }
+                    &:hover svg { fill: $acao1;}
+                }
+                &.img {
+                    height: 50px;
+                    img {
+                        display: block;
+                        border-radius: 6px;
+                        margin: 0;
+                        &:hover { opacity: 0.7;}
+                    }
+                }
+                h5 {
+                    @extend .font14;
+                    a {
+                        color: $cdark;
+                        &:hover { color: $acao1;}
+                    }
+                }
+                span { @extend .font14;}
+            }
+            &:hover td { background: $cbg;}
+            &.linha {
+                td {
+                    padding: 10px 20px;
+                    &::before {
+                        content: '';
+                        height: 1px;
+                        width: 100%;
+                        display: block;
+                        background: $cbord;
+                    }
+                }
+                &:hover td { background: none;}
+            }
+            &.galeria {
+                td { padding-bottom: 55px;}
+                td.titulo {
+                    div {
+                        position: relative;
+                        margin-bottom: -45px;
+                        padding-bottom: 45px;
+                        h5 {
+                            min-height: 50px;
+                            display: flex;
+                            align-items: center;
+                        }
+                        .galeria {
+                            position: absolute;
+                            bottom: 0;
+                            left: -5px;
+                            width: calc(100% + 10px);
+                            &, & * { @extend .reset;}
+                            li {
+                               width: 9.09%;
+                               padding: 0 5px;
+                               box-sizing: border-box;
+                               a {
+                                   display: block;
+                                   width: 100%;
+                                   height: 35px;
+                                   box-sizing: border-box;
+                                   background-size: cover;
+                                   border-radius: 6px;
+                                   &:hover { opacity: 0.7;}
+                                   &.mais {
+                                       @extend .font12;
+                                       color: $acao1;
+                                       text-align: center;
+                                       border: 1px solid $cbord;
+                                       line-height: 33px;
+                                       &:hover {
+                                           opacity: 1;
+                                           background: #fff;
+                                           border-color: $acao1;
+                                       }
+                                   }
+                               }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
